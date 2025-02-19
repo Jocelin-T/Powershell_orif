@@ -23,8 +23,8 @@ Import-Module $path_module_menu
  # Stop the script if the user don't have admin right
 if (-not (Find-UserHasAdminRights)) {
     Clear-Host
-    Write-Host " You do not have administrative rights. Please run this script as an Administrator." -ForegroundColor Red
-    Write-Host " Press any key to exit script..."
+    Write-Host "You do not have administrative rights. Please run this script as an Administrator." -ForegroundColor Red
+    Write-Host "Press any key to exit script..."
     [console]::ReadKey($true).Key
     exit
 }

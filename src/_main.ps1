@@ -18,6 +18,6 @@ Set-StrictMode -Version latest
 . (Join-Path $PSScriptRoot ".\script_manager.ps1")
 
 # End of the script (Close the window after any user entry)
-Write-Host " Exiting Script..." -ForegroundColor Yellow
+Write-Host "Exiting Script..." -ForegroundColor Yellow
 [console]::ReadKey($true).Key
 

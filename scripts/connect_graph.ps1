@@ -10,5 +10,5 @@ Find-MgGraphPermission sites -PermissionType Delegated
 # Disconnect to Microsoft Graph
 Disconnect-Graph
 
-Write-Host " Press any key to continue..."
+Write-Host "Press any key to continue..."
 [console]::ReadKey($true).Key

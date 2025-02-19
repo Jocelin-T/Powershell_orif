@@ -65,8 +65,8 @@ PROCESS {
         [int]$try = 0
         do {
 
-            # ($s is to prevent the display of Member data)
-            $s = New-MgTeamMember -TeamId $team_id -BodyParameter $request_body_new_member 
+            # Store in $null to prevent the display of Team data
+            $null = New-MgTeamMember -TeamId $team_id -BodyParameter $request_body_new_member 
             
             # Wait to avoid API throttling
             Start-Sleep -Seconds 1
@@ -217,8 +217,8 @@ PROCESS {
             # Wait to avoid API throttling
             Start-Sleep -Seconds 1
             
-            # Update the user's role in the team ($s is to prevent the display of Member data)
-            $s = New-MgTeamMember -TeamId $team_id -BodyParameter $request_body
+            # Store in $null to prevent the display of Team data
+            $null = New-MgTeamMember -TeamId $team_id -BodyParameter $request_body
 
             # Wait to avoid API throttling
             Start-Sleep -Seconds 1

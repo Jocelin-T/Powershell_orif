@@ -109,8 +109,8 @@ $request_body_new_team = @{
 	}
 }
 
-# ($s is to prevent the display of Team data)
-$s = New-MgTeam -BodyParameter $request_body_new_team
+# Store in $null to prevent the display of Team data
+$null = New-MgTeam -BodyParameter $request_body_new_team
 
 $mg_created_team = Wait-ApiResponse -max_sec_wait 30 -api_request {
     Get-MgTeam -Filter "displayName eq '$($mg_user.name)'" -Property "id,description"
@@ -257,7 +257,7 @@ Add-MembersToTeam -team_id $($mg_created_team.id) -array_user_email $($mg_user.e
 # Disconnect from Microsoft Graph end of script
 Disconnect-MgGraph    
 
-Write-Host "Pess any key to continue..."
+Write-Host "Press any key to continue..."
 [console]::ReadKey($false).Key
 
 

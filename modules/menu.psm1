@@ -40,20 +40,20 @@ function New-Menu {
             }
             ($move_menu_selector_select_keys -contains $key_pressed) { 
                 Clear-Host
-                # Write-Host " You selected => $($dictionary_menu[$menu_selector])" # DEBUG
+                # Write-Host "You selected => $($dictionary_menu[$menu_selector])" # DEBUG
                 $in_menu = $false
                 return $dictionary_menu[$menu_selector]
                 break 
             }
             ($move_menu_selector_exit_keys -contains $key_pressed) { 
                 Clear-Host
-                Write-Host " Exiting Menu..." -ForegroundColor Yellow
+                Write-Host "Exiting Menu..." -ForegroundColor Yellow
                 $in_menu = $false
                 return 0
                 break 
             }
             default { 
-                Write-Host " Error in menu" -ForegroundColor Red
+                Write-Host "Error in menu" -ForegroundColor Red
                 # Write-Host "You pressed: $($key_pressed)"
                 break 
             }
@@ -110,10 +110,10 @@ function drawMenuChoices {
 # Display the keys the user can use to move trought the menu
 function displayAvailableKey {
     param ()
-    Write-Host " UP      with [W], [Arrow Up]"
-    Write-Host " DOWN    with [S], [Arrow Down]"
-    Write-Host " CONFIRM with [D], [Arrow Right], [Enter]"
-    Write-Host " QUIT    with [Q], [Escape]"
+    Write-Host "UP      with [W], [Arrow Up]"
+    Write-Host "DOWN    with [S], [Arrow Down]"
+    Write-Host "CONFIRM with [D], [Arrow Right], [Enter]"
+    Write-Host "QUIT    with [Q], [Escape]"
     Write-Host ""
 }
 
